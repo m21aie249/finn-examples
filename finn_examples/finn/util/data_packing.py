@@ -149,9 +149,7 @@ def pack_innermost_dim_as_hex_string(
         ndarray = np.asarray(ndarray, dtype=np.float32)
 
     def fun(x):
-        return array2hexstring(
-            x, dtype, pad_to_nbits, reverse=reverse_inner, prefix=prefix
-        )
+        return array2hexstring(x, dtype, pad_to_nbits, reverse=reverse_inner, prefix=prefix)
 
     return np.apply_along_axis(fun, ndarray.ndim - 1, ndarray)
 
