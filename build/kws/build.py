@@ -81,8 +81,18 @@ model.save(model_file)
 os.makedirs("release", exist_ok=True)
 platforms_to_build = ["Pynq-Z2", "ZCU104"]
 last_output_dir=""
+
+# select target fps and clock rate
+
 for platform_name in platforms_to_build:
     release_platform_name = platform_name
+    if platform_name == "Pynq-Z2":
+    	target_fps_rate = 100000
+    	clock_period = 10.0
+    elif platform_name == "ZCU104":
+    	target_fps_rate = 200000
+    	clock_period = 5.0
+
     platform_dir = "release/%s" % release_platform_name
     os.makedirs(platform_dir, exist_ok=True)
     last_output_dir = "output_%s_%s" % (model_name, release_platform_name)
@@ -93,8 +103,8 @@ for platform_name in platforms_to_build:
         steps=build_steps,
         generate_outputs=build_outputs,
         output_dir=last_output_dir,
-        target_fps=200000,
-        synth_clk_period_ns=10.0,
+        target_fps=target_fps_rate,
+        synth_clk_period_ns=clock_period,
         board=platform_name,
         shell_flow_type=build_cfg.ShellFlowType.VIVADO_ZYNQ,
         save_intermediate_models=True,
