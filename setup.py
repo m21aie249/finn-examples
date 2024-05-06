@@ -107,9 +107,9 @@ setup(
     long_description_content_type="text/markdown",
     author="Yaman Umuroglu",
     author_email="yamanu@xilinx.com",
-    url="https://github.com/Xilinx/finn-examples",
+    url="https://github.com/m21aie249/finn-examples",
     packages=find_packages(),
-    download_url="https://github.com/Xilinx/finn-examples",
+    download_url="https://github.com/m21aie249/finn-examples",
     package_data={
         "": data_files,
     },

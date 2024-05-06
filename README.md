@@ -1,3 +1,48 @@
+## Setup Instructions:
+
+This is a fork of the original Xilinx's finn-examples repo. It contains only Pynq-Z2 and ZCU104 builds and bitfiles. 
+The following commands (modified to point to this fork) should be used on the Pynq-Z2 and ZCU104 to install the bitfiles/notebooks
+
+### Zynq
+*For ZYNQ boards, all commands below must be prefixed with `sudo` or by first going into `sudo su`.*
+
+First, source the PYNQ and XRT virtual environment:
+
+```shell
+source /etc/profile.d/pynq_venv.sh
+source /etc/profile.d/xrt_setup.sh
+```
+
+Next, ensure that your `pip` and `setuptools` installations are up-to-date
+on your PYNQ board:
+
+```shell
+python3 -m pip install pip==23.0 setuptools==67.1.0
+```
+
+Since we are going to install finn-examples without build-isolation, we need to ensure all dependencies are installed. For that, install `setuptools_scm` as well:
+
+```shell
+python3 -m pip install setuptools_scm==7.1.0
+```
+
+Install the `finn-examples` package using `pip`:
+
+```shell
+# remove previous versions with: pip3 uninstall finn-examples
+pip3 install finn-examples --no-build-isolation
+# to install particular git branch:
+# pip3 install git+https://github.com/m21aie249/finn-examples.git@dev --no-build-isolation
+```
+
+Retrieve the example Jupyter notebooks using the PYNQ get-notebooks command. An example of how to run the Jupyter notebook server, assuming we are forwarding port 8888 from the target to some port on our local machine, is also shown below:
+
+```shell
+# on PYNQ boards, first cd /home/xilinx/jupyter_notebooks
+pynq get-notebooks --from-package finn-examples -p . --force
+jupyter-notebook --no-browser --allow-root --port=8888
+```
+
 # <img src=https://raw.githubusercontent.com/Xilinx/finn/github-pages/docs/img/finn-logo.png width=200 style="margin-bottom: -15px; margin-right: 10px"/> Dataflow Accelerator Examples
 <p align="center"> <em>for PYNQ on Zynq and Alveo</em> <p>
 <p align="left">
