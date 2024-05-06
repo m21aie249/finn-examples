@@ -116,5 +116,3 @@ def custom_step_mlp_export(model_name):
     model.save(ready_model_filename)
 
     return ready_model_filename
-
-    
