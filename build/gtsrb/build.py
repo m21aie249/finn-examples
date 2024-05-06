@@ -92,8 +92,8 @@ for platform_name in platforms_to_build:
         # set up the build configuration for this model
         cfg = build_cfg.DataflowBuildConfig(
             output_dir="output_%s_%s" % (model_name, release_platform_name),
-            target_fps=3000,
-            synth_clk_period_ns=10.0,
+            target_fps=5000,
+            synth_clk_period_ns=5.0,
             board=platform_name,
             steps=custom_build_steps,
             folding_config_file="folding_config/cnv_gtsrb_folding_config.json",

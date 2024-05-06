@@ -75,7 +75,7 @@ for platform_name in platforms_to_build:
         output_dir="output_%s_%s" % (model_name, release_platform_name),
         mvau_wwidth_max=80,
         target_fps=1000000,
-        synth_clk_period_ns=10.0,
+        synth_clk_period_ns=5.0,
         board=platform_name,
         shell_flow_type=shell_flow_type,
         vitis_platform=vitis_platform,
