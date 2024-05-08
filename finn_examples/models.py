@@ -246,7 +246,7 @@ def get_driver_mode():
 # translate the name to 'deployment' if found. Otherwise, it is an unsupported (in
 # FINN-Examples) platform.
 def check_platform_is_valid(platform):
-    pynq_platforms = ["Pynq-Z1", "ZCU104", "Ultra96"]
+    pynq_platforms = ["Pynq-Z2", "ZCU104", "Ultra96"]
 
     alveo_platforms = {
         "xilinx_u250_gen3x16_xdma_shell_2_1": "xilinx_u250_gen3x16_xdma_2_1_202010_1",

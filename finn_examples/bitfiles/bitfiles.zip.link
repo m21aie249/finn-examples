@@ -1,10 +1,10 @@
 {
     "Pynq-Z2": {
-        "url": "https://github.com/Xilinx/finn-examples/releases/download/v0.0.1/Pynq-Z1.zip",
+        "url": "https://github.com/m21aie249/finn-examples/releases/download/v0.0.1/Pynq-Z2.zip",
         "md5sum": "0f54c7ade57744bb5dc6cade97625178"
     },
     "ZCU104": {
-        "url": "https://github.com/Xilinx/finn-examples/releases/download/v0.0.1/ZCU104.zip",
+        "url": "https://github.com/m21aie249/finn-examples/releases/download/v0.0.1/ZCU104.zip",
         "md5sum": "bb271f6687dede3e5e0cdc0a245e3600"
     }
 }
