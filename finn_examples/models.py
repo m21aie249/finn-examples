@@ -76,6 +76,11 @@ _gtsrb_cnv_io_shape_dict = {
     "oshape_folded": (1, 11, 4),
     "ishape_packed": (1, 1, 32, 32, 3, 1),
     "oshape_packed": (1, 11, 8),
+    "input_dma_name": ["idma0"],
+    "output_dma_name": ["odma0"],
+    "number_of_external_weights": 0,
+    "num_inputs": 1,
+    "num_outputs": 1,
 }
 
 _bincop_cnv_io_shape_dict = {
